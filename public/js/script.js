@@ -25,6 +25,19 @@ function descompletarTarefa(ID){
     window.location.reload()
 }
 
+function excluirTarefa(ID){
+    fetch("http://localhost:3000/excluir",{
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({ ID })
+    })
+
+    window.location.reload()
+}
+
 
 function alterarTema(){
     const tema = localStorage.getItem("tema")
